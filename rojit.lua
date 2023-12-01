@@ -55,9 +55,9 @@ local r_enum_item do
 
         local props do
             props = {
-                name = item_name,
-                value = item_type,
-                enum_type = item_type
+                Name = item_name,
+                Value = item_type,
+                EnumType = item_type
             }
         end
 
@@ -171,86 +171,85 @@ local r_enum do
 end
 
 --[[
-    r_enmum end
+
+    Everything from here on now *has* to be exported 1-1 to Roblox.
+    AKA API Code
+
 ]]
 
---[[
-    enumeration implementations
-]]
-
-local enum do
-    enum = {}
+local Enum do
+    Enum = {}
 
     do
-        local enum_mt = getmetatable(enum)
+        local EnumMT = getmetatable(Enum)
 
-        enum_mt[r_type] = "enum"
+        EnumMT[r_type] = "Enum"
     end
 
     do
-        enum["access_modifier_type"] = enum.new("access_modifier_type", {
+        Enum["AccessModifierType"] = r_enum.new("AccessModifierType", {
             allow = 0,
             deny = 1
         })
 
-        enum["accessory_type"] = enum.new("accessory_type", {
-            unknown = 0,
-            hat = 1,
-            hair = 2,
-            face = 3,
-            neck = 4,
-            shoulder = 5,
-            front = 6,
-            back = 7,
-            waist = 8,
-            tshirt = 9,
-            shirt = 10,
-            pants = 11,
-            jacket = 12,
-            sweater = 13,
-            shorts = 14,
-            left_shoe = 15,
-            right_shoe = 16,
-            dress_skirt = 17,
-            eyebrow = 18,
-            eyelash = 19
+        Enum["AccessoryType"] = r_enum.new("AccessoryType", {
+            Unknown = 0,
+            Hat = 1,
+            Hair = 2,
+            Face = 3,
+            Neck = 4,
+            Shoulder = 5,
+            Front = 6,
+            Back = 7,
+            Waist = 8,
+            TShirt = 9,
+            Shirt = 10,
+            Pants = 11,
+            Jacket = 12,
+            Sweater = 13,
+            Shorts = 14,
+            LeftShoe = 15,
+            RightShoe = 16,
+            DressSkirt = 17,
+            Eyebrow = 18,
+            Eyelash = 19
         })
 
-        enum["action_type"] = enum.new("action_type", {
-            nothing = 0,
-            pause = 1,
-            lose = 2,
-            draw = 3,
-            win = 4
+        Enum["ActionType"] = r_enum.new("ActionType", {
+            Nothing = 0,
+            Pause = 1,
+            Lose = 2,
+            Draw = 3,
+            Win = 4
         })
 
-        enum["actuator_relative_to"] = enum.new("actuator_relative_to", {
-            attachment_0 = 0,
-            attachment_1 = 1,
-            world = 2
+        Enum["ActuatorRelativeTo"] = r_enum.new("ActuatorRelativeTo", {
+            Attachment0 = 0,
+            Attachment1 = 1,
+            World = 2
         })
 
-        enum["actuator_type"] = enum.new("actuator_type", {
-            none = 0,
-            motor = 1,
-            servo = 2
+        Enum["ActuatorType"] = r_enum.new("ActuatorType", {
+            None = 0,
+            Motor = 1,
+            Servo = 2
         })
 
-        enum["ad_event_type"] = enum.new("ad_event_type", {
-            video_loaded = 0,
-            video_removed = 1,
-            user_completed_video = 2
+        Enum["AdEventType"] = r_enum.new("AdEventType", {
+            VideoLoaded = 0,
+            VideoRemoved = 1,
+            UserCompletedVideo = 2
         })
 
-        enum["ad_shape"] = enum.new("ad_shape", {
-            horizontal_rectangle = 1
+        Enum["AdShape"] = r_enum.new("AdShape", {
+            HorizontalRectangle = 1
         })
 
-        enum["ad_teleport_method"] = enum.new("ad_teleport_method", {
-            undefined = 0,
-            portal_forward = 1,
-            in_game_menu_back_button = 2,
-            ui_back_button = 3
+        Enum["AdTeleportMethod"] = r_enum.new("AdTeleportMethod", {
+            Undefined = 0,
+            PortalForward = 1,
+            InGameMenuBackButton = 2,
+            UiBackButton = 3
         })
     end
 end
