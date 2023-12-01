@@ -181,12 +181,6 @@ local Enum do
     Enum = {}
 
     do
-        local EnumMT = getmetatable(Enum)
-
-        EnumMT[r_type] = "Enum"
-    end
-
-    do
         Enum["AccessModifierType"] = r_enum.new("AccessModifierType", {
             allow = 0,
             deny = 1
