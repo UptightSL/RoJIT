@@ -181,12 +181,12 @@ local Enum do
     Enum = {}
 
     do
-        Enum["AccessModifierType"] = r_enum.new("AccessModifierType", {
+        Enum.AccessModifierType = r_enum.new("AccessModifierType", {
             allow = 0,
             deny = 1
         })
 
-        Enum["AccessoryType"] = r_enum.new("AccessoryType", {
+        Enum.AccessoryType = r_enum.new("AccessoryType", {
             Unknown = 0,
             Hat = 1,
             Hair = 2,
@@ -209,7 +209,7 @@ local Enum do
             Eyelash = 19
         })
 
-        Enum["ActionType"] = r_enum.new("ActionType", {
+        Enum.ActionType = r_enum.new("ActionType", {
             Nothing = 0,
             Pause = 1,
             Lose = 2,
@@ -217,29 +217,29 @@ local Enum do
             Win = 4
         })
 
-        Enum["ActuatorRelativeTo"] = r_enum.new("ActuatorRelativeTo", {
+        Enum.ActuatorRelativeTo = r_enum.new("ActuatorRelativeTo", {
             Attachment0 = 0,
             Attachment1 = 1,
             World = 2
         })
 
-        Enum["ActuatorType"] = r_enum.new("ActuatorType", {
+        Enum.ActuatorType = r_enum.new("ActuatorType", {
             None = 0,
             Motor = 1,
             Servo = 2
         })
 
-        Enum["AdEventType"] = r_enum.new("AdEventType", {
+        Enum.AdEventType = r_enum.new("AdEventType", {
             VideoLoaded = 0,
             VideoRemoved = 1,
             UserCompletedVideo = 2
         })
 
-        Enum["AdShape"] = r_enum.new("AdShape", {
+        Enum.AdShape = r_enum.new("AdShape", {
             HorizontalRectangle = 1
         })
 
-        Enum["AdTeleportMethod"] = r_enum.new("AdTeleportMethod", {
+        Enum.AdTeleportMethod = r_enum.new("AdTeleportMethod", {
             Undefined = 0,
             PortalForward = 1,
             InGameMenuBackButton = 2,
@@ -247,3 +247,4 @@ local Enum do
         })
     end
 end
+
