@@ -229,5 +229,28 @@ local enum do
             attachment_1 = 1,
             world = 2
         })
+
+        enum["actuator_type"] = enum.new("actuator_type", {
+            none = 0,
+            motor = 1,
+            servo = 2
+        })
+
+        enum["ad_event_type"] = enum.new("ad_event_type", {
+            video_loaded = 0,
+            video_removed = 1,
+            user_completed_video = 2
+        })
+
+        enum["ad_shape"] = enum.new("ad_shape", {
+            horizontal_rectangle = 1
+        })
+
+        enum["ad_teleport_method"] = enum.new("ad_teleport_method", {
+            undefined = 0,
+            portal_forward = 1,
+            in_game_menu_back_button = 2,
+            ui_back_button = 3
+        })
     end
 end
