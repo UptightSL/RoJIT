@@ -170,3 +170,64 @@ local r_enum do
     end
 end
 
+--[[
+    r_enmum end
+]]
+
+--[[
+    enumeration implementations
+]]
+
+local enum do
+    enum = {}
+
+    do
+        local enum_mt = getmetatable(enum)
+
+        enum_mt[r_type] = "enum"
+    end
+
+    do
+        enum["access_modifier_type"] = enum.new("access_modifier_type", {
+            allow = 0,
+            deny = 1
+        })
+
+        enum["accessory_type"] = enum.new("accessory_type", {
+            unknown = 0,
+            hat = 1,
+            hair = 2,
+            face = 3,
+            neck = 4,
+            shoulder = 5,
+            front = 6,
+            back = 7,
+            waist = 8,
+            tshirt = 9,
+            shirt = 10,
+            pants = 11,
+            jacket = 12,
+            sweater = 13,
+            shorts = 14,
+            left_shoe = 15,
+            right_shoe = 16,
+            dress_skirt = 17,
+            eyebrow = 18,
+            eyelash = 19
+        })
+
+        enum["action_type"] = enum.new("action_type", {
+            nothing = 0,
+            pause = 1,
+            lose = 2,
+            draw = 3,
+            win = 4
+        })
+
+        enum["actuator_relative_to"] = enum.new("actuator_relative_to", {
+            attachment_0 = 0,
+            attachment_1 = 1,
+            world = 2
+        })
+    end
+end
