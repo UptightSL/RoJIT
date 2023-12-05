@@ -245,6 +245,339 @@ local Enum do
             InGameMenuBackButton = 2,
             UiBackButton = 3
         })
+
+        Enum.AdUnitStatus = r_enum.new("AdUnitStatus", {
+            Inactive = 0,
+            Active = 1
+        })
+
+        Enum.AdornCullingMode = r_enum.new("AdornCullingMode", {
+            Automatic = 0,
+            Never = 1
+        })
+
+        Enum.AlignType = r_enum.new("AlignType", {
+            Parallel = 0, --[[ Deprecated ]]
+            Perpendicular = 1, --[[ Deprecated ]]
+            PrimaryAxisParallel = 2,
+            PrimaryAxisPerpendicular = 3,
+            PrimaryAxisLookAt = 4,
+            AllAxes = 5
+        })
+
+        Enum.AlphaMode = r_enum.new("AlphaMode", {
+            Overlay = 0,
+            Transparency = 1
+        })
+
+        Enum.AnalyticsEconomyAction = r_enum.new("AnalyticsEconomyAction", {
+            Default = 0,
+            Acquire = 1,
+            Spend = 2
+        })
+
+        Enum.AnalyticsLogLevel = r_enum.new("AnalyticsLogLevel", {
+            Trace = 0,
+            Debug = 1,
+            Information = 2,
+            Warning = 3,
+            Error = 4,
+            Fatal = 5
+        })
+
+        Enum.AnalyticsProgressionStatus = r_enum.new("AnalyticsProgressionStatus", {
+            Default = 0,
+            Begin = 1,
+            Complete = 2,
+            Abandon = 3,
+            Fail = 4
+        })
+
+        Enum.AnimationClipFromVideoStatus = r_enum.new("AnimationClipFromVideoStatus", {
+            Initializing = 0,
+            Pending = 1,
+            Processing = 2,
+            ErrorGeneric = 4,
+            Success = 6,
+            ErrorVideoTooLong = 7,
+            ErrorNoPersonDetected = 8,
+            ErrorVideoUnstable = 9,
+            Timeout = 10,
+            Cancelled = 11,
+            ErrorMultiplePeople = 12,
+            ErrorUploadingVideo = 2001
+        })
+
+        Enum.AnimationCompositorMode = r_enum.new("AnimationCompositorMode", {
+            Default = 0,
+            Enabled = 1,
+            Disabled = 2
+        })
+
+        Enum.AnimationPriority = r_enum.new("AnimationPriority", {
+            Idle = 0,
+            Movement = 1,
+            Action = 2,
+            Action2 = 3,
+            Action3 = 4,
+            Action4 = 5,
+            Core = 1000
+        })
+
+        Enum.AnimatorRetargetingMode = r_enum.new("AnimatorRetargetingMode", {
+            default = 0,
+            Disabled = 1,
+            Enabled = 2
+        })
+
+        Enum.AppShellActionType = r_enum.new("AppShellActionType", {
+            None = 0,
+            OpenApp = 1,
+            TapChatTab = 2,
+            TapConversationEntry = 3,
+            TapAvatarTab = 4,
+            ReadConversation = 5,
+            TapGamePageTab = 6,
+            TapHomePageTab = 7,
+            GamePageLoaded = 8,
+            HomePageLoaded = 9,
+            AvatarEditorPageLoaded = 10
+        })
+
+        Enum.AppShellFeature = r_enum.new("AppShellFeature", {
+            None = 0,
+            Chat = 1,
+            AvatarEditor = 2,
+            GamePage = 3,
+            HomePage = 4,
+            More = 5,
+            Landing = 6
+        })
+
+        Enum.AppUpdateStatus = r_enum.new("AppUpdateStatus", {
+            Unknown = 0,
+            NotSupported = 1,
+            Failed = 2,
+            NotAvailable = 3,
+            Available = 4
+        })
+
+        Enum.ApplyStrokeMode = r_enum.new("ApplyStrokeMode", {
+            Contextual = 0,
+            Border = 1
+        })
+
+        Enum.AspectType = r_enum.new("AspectType", {
+            FitWithinMaxSize = 0,
+            ScaleWithParentSize = 1
+        })
+
+        Enum.AssetCreatorType = r_enum.new("AssetCreatorType", {
+            User = 0,
+            Group = 1
+        })
+
+        Enum.AssetFetchStatus = r_enum.new("AssetFetchStatus", {
+            Success = 0,
+            Failure = 1,
+            None = 2,
+            Loading = 3,
+            TimedOut = 4
+        })
+
+        Enum.AssetType = r_enum.new("AssetType", {
+            Image = 1,
+            TShirt = 2,
+            Audio = 3,
+            Mesh = 4,
+            Lua = 5,
+            Hat = 8,
+            Place = 9,
+            Model = 10,
+            Shirt = 11,
+            Pants = 12,
+            Decal = 13,
+            Head = 17,
+            Face = 18,
+            Gear = 19,
+            Badge = 21,
+            Animation = 24,
+            Torso = 27,
+            RightArm = 28,
+            LeftArm = 29,
+            LeftLeg = 30,
+            RightLeg = 31,
+            Package = 32,
+            GamePass = 34,
+            Plugin = 38,
+            MeshPart = 40,
+            HairAccessory = 41,
+            FaceAccessory = 42,
+            NeckAccessory = 43,
+            ShoulderAccessory = 44,
+            FrontAccessory = 45,
+            BackAccessory = 46,
+            WaistAccessory = 47,
+            ClimbAnimation = 48,
+            DeathAnimation = 49,
+            FallAnimation = 50,
+            IdleAnimation = 51,
+            JumpAnimation = 52,
+            RunAnimation = 53,
+            SwimAnimation = 54,
+            WalkAnimation = 55,
+            PoseAnimation = 56,
+            EarAccessory = 57,
+            EmoteAnimation = 61,
+            Video = 62,
+            TShirtAccessory = 64,
+            ShirtAccessory = 65,
+            PantsAccessory = 66,
+            JacketAccessory = 67,
+            SweaterAccessory = 68,
+            ShortsAccessory = 69,
+            LeftShoeAccessory = 70,
+            RightShoeAccessory = 71,
+            DressSkirtAccessory = 72,
+            FontFamily = 73,
+            EyebrowAccessory = 76,
+            EyelashAccessory = 77,
+            MoodAnimation = 78,
+            DynamicHead = 79
+        })
+
+        Enum.AssetTypeVerification = r_enum.new("AssetTypeVerification", {
+            Default = 1,
+            ClientOnly = 2,
+            Always = 3
+        })
+
+        Enum.AudioApiRollout = r_enum.new("AudioApiRollout", {
+            Disabled = 0,
+            Automatic = 1,
+            Enabled = 2
+        })
+
+        Enum.AudioSubType = r_enum.new("AudioSubType", {
+            Music = 1,
+            SoundEffect = 2
+        })
+
+        Enum.AudioWindowSize = r_enum.new("AudioWindowSize", {
+            Small = 0,
+            Medium = 1,
+            Large = 2
+        })
+
+        Enum.AutoIndentRule = r_enum.new("AutoIndentRule", {
+            Off = 0,
+            Absolute = 1,
+            Relative = 2
+        })
+
+        Enum.AutomaticSize = r_enum.new("AutomaticSize", {
+            None = 0,
+            X = 1,
+            Y = 2,
+            XY = 3
+        })
+
+        Enum.AvatarAssetType = r_enum.new("AvatarAssetType", {
+            TShirt = 2,
+            Hat = 8,
+            Shirt = 11,
+            Pants = 12,
+            Head = 17,
+            Face = 18,
+            Gear = 19,
+            Torso = 27,
+            RightArm = 28,
+            LeftArm = 29,
+            LeftLeg = 30,
+            RightLeg = 31,
+            HairAccessory = 41,
+            FaceAccessory = 42,
+            NeckAccessory = 43,
+            ShoulderAccessory = 44,
+            FrontAccessory = 45,
+            BackAccessory = 46,
+            WaistAccessory = 47,
+            ClimbAnimation = 48,
+            FallAnimation = 50,
+            IdleAnimation = 51,
+            JumpAnimation = 52,
+            RunAnimation = 53,
+            SwimAnimation = 54,
+            WalkAnimation = 55,
+            EmoteAnimation = 61,
+            TShirtAccessory = 64,
+            ShirtAccessory = 65,
+            PantsAccessory = 66,
+            JacketAccessory = 67,
+            SweaterAccessory = 68,
+            ShortsAccessory = 69,
+            LeftShoeAccessory = 70,
+            RightShoeAccessory = 71,
+            DressSkirtAccessory = 72,
+            EyebrowAccessory = 76,
+            EyelashAccessory = 77,
+            MoodAnimation = 78,
+            DynamicHead = 79
+        })
+
+        Enum.AvatarChatServiceFeature = r_enum.new("AvatarChatServiceFeature", {
+            None = 0,
+            UniverseAudio = 1,
+            UniverseVideo = 2,
+            PlaceAudio = 4,
+            PlaceVideo = 8,
+            UserAudioEligible = 16,
+            UserAudio = 32,
+            UserVideoEligible = 64,
+            UserVideo = 128,
+            UserBanned = 256
+        })
+
+        Enum.AvatarContextMenuOption = r_enum.new("AvatarContextMenuOption", {
+            Friend = 0,
+            Chat = 1,
+            Emote = 2,
+            InspectMenu = 3
+        })
+
+        Enum.AvatarItemType = r_enum.new("AvatarItemType", {
+            Asset = 1,
+            Bundle = 2
+        })
+
+        Enum.AvatarJointUpgrade = r_enum.new("AvatarJointUpgrade", {
+            Default = 0,
+            Enabled = 1,
+            Disabled = 2
+        })
+
+        Enum.AvatarPromptResult = r_enum.new("AvatarPromptResult", {
+            Success = 1,
+            PermissionDenied = 2,
+            Failed = 3
+        })
+
+        Enum.AvatarThumbnailCustomizationType = r_enum.new("AvatarThumbnailCustomizationType", {
+            Closeup = 1,
+            FullBody = 2
+        })
+
+        Enum.AvatarUnificationMode = r_enum.new("AvatarUnificationMode", {
+            Default = 0,
+            Disabled = 1,
+            Enabled = 2
+        })
+
+        Enum.Axis = r_enum.new("Axis", {
+            X = 0,
+            Y = 1,
+            Z = 2
+        })
     end
 end
 
