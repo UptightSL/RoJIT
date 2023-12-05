@@ -20,7 +20,6 @@ local r_type, r_type_mt do
 end
 
 --> r_typeof - custom function in Roblox, used for advanced types.
---> r_wait - custom function in Roblox, used for setting up "sleeps"/waits.
 local r_typeof do
     function r_typeof(object)
         local object_type = type(object)
@@ -178,15 +177,18 @@ end
 ]]
 
 local Enum do
-    Enum = {}
+    Enum = newproxy(true)
+    
+    EnumInternal = getmetatable(Enum)
+    EnumInternal[r_type] = "Enum"
 
     do
-        Enum.AccessModifierType = r_enum.new("AccessModifierType", {
+        EnumInternal.AccessModifierType = r_enum.new("AccessModifierType", {
             allow = 0,
             deny = 1
         })
 
-        Enum.AccessoryType = r_enum.new("AccessoryType", {
+        EnumInternal.AccessoryType = r_enum.new("AccessoryType", {
             Unknown = 0,
             Hat = 1,
             Hair = 2,
@@ -209,7 +211,7 @@ local Enum do
             Eyelash = 19
         })
 
-        Enum.ActionType = r_enum.new("ActionType", {
+        EnumInternal.ActionType = r_enum.new("ActionType", {
             Nothing = 0,
             Pause = 1,
             Lose = 2,
@@ -217,46 +219,46 @@ local Enum do
             Win = 4
         })
 
-        Enum.ActuatorRelativeTo = r_enum.new("ActuatorRelativeTo", {
+        EnumInternal.ActuatorRelativeTo = r_enum.new("ActuatorRelativeTo", {
             Attachment0 = 0,
             Attachment1 = 1,
             World = 2
         })
 
-        Enum.ActuatorType = r_enum.new("ActuatorType", {
+        EnumInternal.ActuatorType = r_enum.new("ActuatorType", {
             None = 0,
             Motor = 1,
             Servo = 2
         })
 
-        Enum.AdEventType = r_enum.new("AdEventType", {
+        EnumInternal.AdEventType = r_enum.new("AdEventType", {
             VideoLoaded = 0,
             VideoRemoved = 1,
             UserCompletedVideo = 2
         })
 
-        Enum.AdShape = r_enum.new("AdShape", {
+        EnumInternal.AdShape = r_enum.new("AdShape", {
             HorizontalRectangle = 1
         })
 
-        Enum.AdTeleportMethod = r_enum.new("AdTeleportMethod", {
+        EnumInternal.AdTeleportMethod = r_enum.new("AdTeleportMethod", {
             Undefined = 0,
             PortalForward = 1,
             InGameMenuBackButton = 2,
             UiBackButton = 3
         })
 
-        Enum.AdUnitStatus = r_enum.new("AdUnitStatus", {
+        EnumInternal.AdUnitStatus = r_enum.new("AdUnitStatus", {
             Inactive = 0,
             Active = 1
         })
 
-        Enum.AdornCullingMode = r_enum.new("AdornCullingMode", {
+        EnumInternal.AdornCullingMode = r_enum.new("AdornCullingMode", {
             Automatic = 0,
             Never = 1
         })
 
-        Enum.AlignType = r_enum.new("AlignType", {
+        EnumInternal.AlignType = r_enum.new("AlignType", {
             Parallel = 0, --[[ Deprecated ]]
             Perpendicular = 1, --[[ Deprecated ]]
             PrimaryAxisParallel = 2,
@@ -265,18 +267,18 @@ local Enum do
             AllAxes = 5
         })
 
-        Enum.AlphaMode = r_enum.new("AlphaMode", {
+        EnumInternal.AlphaMode = r_enum.new("AlphaMode", {
             Overlay = 0,
             Transparency = 1
         })
 
-        Enum.AnalyticsEconomyAction = r_enum.new("AnalyticsEconomyAction", {
+        EnumInternal.AnalyticsEconomyAction = r_enum.new("AnalyticsEconomyAction", {
             Default = 0,
             Acquire = 1,
             Spend = 2
         })
 
-        Enum.AnalyticsLogLevel = r_enum.new("AnalyticsLogLevel", {
+        EnumInternal.AnalyticsLogLevel = r_enum.new("AnalyticsLogLevel", {
             Trace = 0,
             Debug = 1,
             Information = 2,
@@ -285,7 +287,7 @@ local Enum do
             Fatal = 5
         })
 
-        Enum.AnalyticsProgressionStatus = r_enum.new("AnalyticsProgressionStatus", {
+        EnumInternal.AnalyticsProgressionStatus = r_enum.new("AnalyticsProgressionStatus", {
             Default = 0,
             Begin = 1,
             Complete = 2,
@@ -293,7 +295,7 @@ local Enum do
             Fail = 4
         })
 
-        Enum.AnimationClipFromVideoStatus = r_enum.new("AnimationClipFromVideoStatus", {
+        EnumInternal.AnimationClipFromVideoStatus = r_enum.new("AnimationClipFromVideoStatus", {
             Initializing = 0,
             Pending = 1,
             Processing = 2,
@@ -308,13 +310,13 @@ local Enum do
             ErrorUploadingVideo = 2001
         })
 
-        Enum.AnimationCompositorMode = r_enum.new("AnimationCompositorMode", {
+        EnumInternal.AnimationCompositorMode = r_enum.new("AnimationCompositorMode", {
             Default = 0,
             Enabled = 1,
             Disabled = 2
         })
 
-        Enum.AnimationPriority = r_enum.new("AnimationPriority", {
+        EnumInternal.AnimationPriority = r_enum.new("AnimationPriority", {
             Idle = 0,
             Movement = 1,
             Action = 2,
@@ -324,13 +326,13 @@ local Enum do
             Core = 1000
         })
 
-        Enum.AnimatorRetargetingMode = r_enum.new("AnimatorRetargetingMode", {
+        EnumInternal.AnimatorRetargetingMode = r_enum.new("AnimatorRetargetingMode", {
             default = 0,
             Disabled = 1,
             Enabled = 2
         })
 
-        Enum.AppShellActionType = r_enum.new("AppShellActionType", {
+        EnumInternal.AppShellActionType = r_enum.new("AppShellActionType", {
             None = 0,
             OpenApp = 1,
             TapChatTab = 2,
@@ -344,7 +346,7 @@ local Enum do
             AvatarEditorPageLoaded = 10
         })
 
-        Enum.AppShellFeature = r_enum.new("AppShellFeature", {
+        EnumInternal.AppShellFeature = r_enum.new("AppShellFeature", {
             None = 0,
             Chat = 1,
             AvatarEditor = 2,
@@ -354,7 +356,7 @@ local Enum do
             Landing = 6
         })
 
-        Enum.AppUpdateStatus = r_enum.new("AppUpdateStatus", {
+        EnumInternal.AppUpdateStatus = r_enum.new("AppUpdateStatus", {
             Unknown = 0,
             NotSupported = 1,
             Failed = 2,
@@ -362,22 +364,22 @@ local Enum do
             Available = 4
         })
 
-        Enum.ApplyStrokeMode = r_enum.new("ApplyStrokeMode", {
+        EnumInternal.ApplyStrokeMode = r_enum.new("ApplyStrokeMode", {
             Contextual = 0,
             Border = 1
         })
 
-        Enum.AspectType = r_enum.new("AspectType", {
+        EnumInternal.AspectType = r_enum.new("AspectType", {
             FitWithinMaxSize = 0,
             ScaleWithParentSize = 1
         })
 
-        Enum.AssetCreatorType = r_enum.new("AssetCreatorType", {
+        EnumInternal.AssetCreatorType = r_enum.new("AssetCreatorType", {
             User = 0,
             Group = 1
         })
 
-        Enum.AssetFetchStatus = r_enum.new("AssetFetchStatus", {
+        EnumInternal.AssetFetchStatus = r_enum.new("AssetFetchStatus", {
             Success = 0,
             Failure = 1,
             None = 2,
@@ -385,7 +387,7 @@ local Enum do
             TimedOut = 4
         })
 
-        Enum.AssetType = r_enum.new("AssetType", {
+        EnumInternal.AssetType = r_enum.new("AssetType", {
             Image = 1,
             TShirt = 2,
             Audio = 3,
@@ -446,43 +448,43 @@ local Enum do
             DynamicHead = 79
         })
 
-        Enum.AssetTypeVerification = r_enum.new("AssetTypeVerification", {
+        EnumInternal.AssetTypeVerification = r_enum.new("AssetTypeVerification", {
             Default = 1,
             ClientOnly = 2,
             Always = 3
         })
 
-        Enum.AudioApiRollout = r_enum.new("AudioApiRollout", {
+        EnumInternal.AudioApiRollout = r_enum.new("AudioApiRollout", {
             Disabled = 0,
             Automatic = 1,
             Enabled = 2
         })
 
-        Enum.AudioSubType = r_enum.new("AudioSubType", {
+        EnumInternal.AudioSubType = r_enum.new("AudioSubType", {
             Music = 1,
             SoundEffect = 2
         })
 
-        Enum.AudioWindowSize = r_enum.new("AudioWindowSize", {
+        EnumInternal.AudioWindowSize = r_enum.new("AudioWindowSize", {
             Small = 0,
             Medium = 1,
             Large = 2
         })
 
-        Enum.AutoIndentRule = r_enum.new("AutoIndentRule", {
+        EnumInternal.AutoIndentRule = r_enum.new("AutoIndentRule", {
             Off = 0,
             Absolute = 1,
             Relative = 2
         })
 
-        Enum.AutomaticSize = r_enum.new("AutomaticSize", {
+        EnumInternal.AutomaticSize = r_enum.new("AutomaticSize", {
             None = 0,
             X = 1,
             Y = 2,
             XY = 3
         })
 
-        Enum.AvatarAssetType = r_enum.new("AvatarAssetType", {
+        EnumInternal.AvatarAssetType = r_enum.new("AvatarAssetType", {
             TShirt = 2,
             Hat = 8,
             Shirt = 11,
@@ -525,7 +527,7 @@ local Enum do
             DynamicHead = 79
         })
 
-        Enum.AvatarChatServiceFeature = r_enum.new("AvatarChatServiceFeature", {
+        EnumInternal.AvatarChatServiceFeature = r_enum.new("AvatarChatServiceFeature", {
             None = 0,
             UniverseAudio = 1,
             UniverseVideo = 2,
@@ -538,42 +540,42 @@ local Enum do
             UserBanned = 256
         })
 
-        Enum.AvatarContextMenuOption = r_enum.new("AvatarContextMenuOption", {
+        EnumInternal.AvatarContextMenuOption = r_enum.new("AvatarContextMenuOption", {
             Friend = 0,
             Chat = 1,
             Emote = 2,
             InspectMenu = 3
         })
 
-        Enum.AvatarItemType = r_enum.new("AvatarItemType", {
+        EnumInternal.AvatarItemType = r_enum.new("AvatarItemType", {
             Asset = 1,
             Bundle = 2
         })
 
-        Enum.AvatarJointUpgrade = r_enum.new("AvatarJointUpgrade", {
+        EnumInternal.AvatarJointUpgrade = r_enum.new("AvatarJointUpgrade", {
             Default = 0,
             Enabled = 1,
             Disabled = 2
         })
 
-        Enum.AvatarPromptResult = r_enum.new("AvatarPromptResult", {
+        EnumInternal.AvatarPromptResult = r_enum.new("AvatarPromptResult", {
             Success = 1,
             PermissionDenied = 2,
             Failed = 3
         })
 
-        Enum.AvatarThumbnailCustomizationType = r_enum.new("AvatarThumbnailCustomizationType", {
+        EnumInternal.AvatarThumbnailCustomizationType = r_enum.new("AvatarThumbnailCustomizationType", {
             Closeup = 1,
             FullBody = 2
         })
 
-        Enum.AvatarUnificationMode = r_enum.new("AvatarUnificationMode", {
+        EnumInternal.AvatarUnificationMode = r_enum.new("AvatarUnificationMode", {
             Default = 0,
             Disabled = 1,
             Enabled = 2
         })
 
-        Enum.Axis = r_enum.new("Axis", {
+        EnumInternal.Axis = r_enum.new("Axis", {
             X = 0,
             Y = 1,
             Z = 2
